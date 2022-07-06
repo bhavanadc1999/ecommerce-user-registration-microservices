@@ -9,11 +9,11 @@ services:
       - "8004:8004"
     networks:
       - ecom-network
-#     depends_on:
-#       - naming-server
+    depends_on:
+      - naming-server
       
-#     environment:
-#       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
     
     
      
@@ -25,11 +25,11 @@ services:
       - "8003:8003"
     networks:
       - ecom-network
-#     depends_on:
-#       - naming-server
+    depends_on:
+      - naming-server
       
-#     environment:
-#       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
       
   products-module:
     image: bhavanadc1999/ecom-products-service:0.0.1.RELEASE
@@ -38,35 +38,35 @@ services:
       - "8002:8002"
     networks:
       - ecom-network
-#     depends_on:
-#       - naming-server
+    depends_on:
+      - naming-server
       
-#     environment:
-#       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
     
       
 
-#   api-gateway:
-#     image: bhavanadc1999/ecom-apigateway-service:0.0.1.RELEASE
-#     mem_limit: 700m
-#     ports:
-#       - "8001:8001"
-#     networks:
-#       - ecom-network
-#     depends_on:
-#       - naming-server    
-#     environment:
-      #EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
+  api-gateway:
+    image: bhavanadc1999/ecom-apigateway-service:0.0.1.RELEASE
+    mem_limit: 700m
+    ports:
+      - "8001:8001"
+    networks:
+      - ecom-network
+    depends_on:
+      - naming-server    
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8000/eureka
      
       
 
-#   naming-server:
-#     image: bhavanadc1999/ecom-naming-service:0.0.1.RELEASE
-#     mem_limit: 700m
-#     ports:
-#       - "8000:8000"
-#     networks:
-#       - ecom-network
+  naming-server:
+    image: bhavanadc1999/ecom-naming-service:0.0.1.RELEASE
+    mem_limit: 700m
+    ports:
+      - "8000:8000"
+    networks:
+      - ecom-network
       
   
     
